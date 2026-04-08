@@ -24,7 +24,7 @@
         <a href="index.html" class="Logo">Skal Reviews</a>
         <a href="#">Browse Games</a>
         <a href="#">Profile</a>
-        <a href="#">FAQ</a>
+        <a href="#faqQuestions">FAQ</a>
       </div>
 
       <input
@@ -33,6 +33,7 @@
         id="searchBar"
         placeholder="Search Games"
       />
+      <div id="searchDropdown" class="search-dropdown"></div>
 
       <button id="loginBtn"><a href="login.html">Login</a></button>
     </nav>
@@ -118,6 +119,56 @@
           <div id="mmorpgGamesCards" class="carousel-track"></div>
         </div>
       </section>
+
+      <section class="faqSection">
+        <h1>Fequently asked Questions</h1>
+        <div id="faqQuestions">
+          <details class="detailCard">
+            <summary>What is Skal Reviews V</summary>
+            <p>
+              Skal Reviews is a free game discovery platform that helps you find
+              and learn about new, popular, and genre-specific games before you
+              play them.
+            </p>
+          </details>
+          <details class="detailCard">
+            <summary>Where does the game data come from V</summary>
+            <p>
+              We pull game information from the FreeToGame API and Steam API to
+              provide accurate details, screenshots, and release information.
+            </p>
+          </details>
+          <details class="detailCard">
+            <summary>What are the benefits of creating an account V</summary>
+            <p>
+              With an account, you can favorite games, save them to your
+              profile, and quickly access your curated game list anytime you
+              return.
+            </p>
+          </details>
+          <details class="detailCard">
+            <summary>Why isn't a specific game showing up V</summary>
+            <p>
+              We primarily feature free-to-play games. If a paid game isn't
+              appearing, it may not be available in our current data sources.
+            </p>
+          </details>
+          <details class="detailCard">
+            <summary>How do I search for a game V</summary>
+            <p>
+              Use the search bar at the top of the page. Type a game name and
+              press Enter to find matching results
+            </p>
+          </details>
+          <details class="detailCard">
+            <summary>Can I suggest a game to be added V</summary>
+            <p>
+              Currently we don't accept manual submissions, but we're always
+              expanding our database through API updates.
+            </p>
+          </details>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -137,5 +188,6 @@
     <script src="js/index.js"></script>
     <script src="js/GameAPI.js"></script>
     <script src="js/GameAPI2.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
