@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/indexCss.css" />
+    <title>Skal Reviews</title>
+  </head>
+  <body>
+    <nav class="navBar">
+      <i class="bx bx-menu" id="menuToggle"></i>
+
+      <div class="navLinks">
+        <a href="index.html" class="Logo">Skal Reviews</a>
+        <a href="#">Browse Games</a>
+        <a href="#">Profile</a>
+        <a href="#">FAQ</a>
+      </div>
+
+      <input
+        type="search"
+        name="searchBar"
+        id="searchBar"
+        placeholder="Search Games"
+      />
+
+      <button id="loginBtn"><a href="login.html">Login</a></button>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>Menu</span>
+        <i class="bx bx-x" id="closeSidebar"></i>
+      </div>
+      <div class="sidebar-links">
+        <a href="index.html">Home</a>
+        <a href="#">Browse Games</a>
+        <a href="#">Profile</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <p class="heroLogo">SKAL REVIEWS</p>
+      <p>know before you play</p>
+    </section>
+
+    <main class="mainSection">
+      <!-- New Releases Section -->
+      <!-- New Releases -->
+      <section class="GameSection">
+        <div class="section-header">
+          <p class="header">New Releases</p>
+          <div class="carousel-buttons">
+            <button class="carousel-btn" id="newReleasesPrevBtn">❮</button>
+            <button class="carousel-btn" id="newReleasesNextBtn">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div id="newGamesCards" class="carousel-track"></div>
+        </div>
+      </section>
+
+      <!-- Most Popular -->
+      <section class="GameSection">
+        <div class="section-header">
+          <p class="header">Popular Games</p>
+          <div class="carousel-buttons">
+            <button class="carousel-btn" id="popularPrevBtn">❮</button>
+            <button class="carousel-btn" id="popularNextBtn">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div id="popularGamesCards" class="carousel-track"></div>
+        </div>
+      </section>
+
+      <!-- Top Shooters -->
+      <section class="GameSection">
+        <section class="GameSection">
+        <div class="section-header">
+          <p class="header">Shooter Games</p>
+          <div class="carousel-buttons">
+            <button class="carousel-btn" id="shooterPrevBtn">❮</button>
+            <button class="carousel-btn" id="shooterNextBtn">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div id="shooterGamesCards" class="carousel-track"></div>
+        </div>
+      </section>
+
+      <!-- Top MMORPGs -->
+      <section class="GameSection">
+        <div class="section-header">
+          <p class="header">MMORPG Games</p>
+          <div class="carousel-buttons">
+            <button class="carousel-btn" id="mmorpgPrevBtn">❮</button>
+            <button class="carousel-btn" id="mmorpgNextBtn">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div id="mmorpgGamesCards" class="carousel-track"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/index.js"></script>
+    <script src="js/GameAPI.js"></script>
+  </body>
+</html>

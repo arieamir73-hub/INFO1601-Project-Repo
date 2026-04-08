@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+  font-family: Roboto;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  a {
+    color: white;
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+/*NAVIGATION BAR*/
+
+.navBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  color: white;
+  background-color: black;
+}
+
+.Logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  flex: 0.7 1 auto;
+  justify-content: space-around;
+  font-size: 20px;
+  align-items: center;
+}
+
+#searchBar {
+  flex: 0.5 1 250px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+}
+
+#loginBtn {
+  flex: 0 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(109, 23, 153);
+}
+
+/* SIDE BAR CODE*/
+#menuToggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: #1a1a1a;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar-header i {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  #menuToggle {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navBar input {
+    max-width: 200px;
+  }
+
+  #searchBar {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #loginBtn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/*HERO SECTION*/
+
+.hero {
+  background-color: lightcoral;
+  color: white;
+  background: linear-gradient(90deg, #1a1a1a 0%, #4a148c 50%, #7b1fa2 100%);
+  padding: 60px 20px;
+  font-size: 20px;
+  line-height: 3em;
+  margin-bottom: 50px;
+}
+
+.heroLogo {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/*NEW GAME RELEASE SECTION*/
+
+.GameSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 95vw;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.header {
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#newGamesCards,
+#popularGamesCards,
+#shooterGamesCards,
+#mmorpgGamesCard {
+  display: flex;
+  height: 320px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.newCards {
+  flex: 0 0 220px; /* Fixed width for all cards */
+  border: 3px solid rgb(109, 23, 153);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: space-between;
+  min-height: 320px;
+}
+
+.newCards:hover {
+  transform: translateY(-5px);
+}
+
+.newImage {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  border-bottom: 5px solid rgb(109, 23, 153);
+}
+
+.newName {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.newGenre {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Add these new styles for carousel */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  margin: 0;
+  /* Keep your existing header styles */
+}
+.carousel-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-btn {
+  background: rgba(109, 23, 153, 0.8);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgb(109, 23, 153);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 10px 5px;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.newCards {
+  flex: 0 0 200px;
+}
+
+@media (max-width: 768px) {
+  .newCards {
+    flex: 0 0 160px;
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
