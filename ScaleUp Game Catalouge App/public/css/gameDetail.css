@@ -195,6 +195,7 @@
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 8px;
+
   padding: 15px;
 }
 
@@ -214,6 +215,7 @@
 .review-author {
   font-weight: bold;
   color: white;
+  font-size: 1.5em;
 }
 
 .review-recommended {
@@ -236,7 +238,7 @@
 .review-text {
   color: #ccc;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 2em;
 }
 
 .review-stats {
@@ -244,11 +246,81 @@
   gap: 20px;
   margin-top: 10px;
   color: #888;
-  font-size: 13px;
+  font-size: 1.5em;
 }
 
 .loading-reviews {
   color: #888;
   text-align: center;
   padding: 20px;
+}
+
+@media (min-width: 2560px) {
+  .gameLayout {
+    margin-bottom: 140px;
+  }
+
+  .imageColumn {
+    flex: 4;
+    max-width: 900px;
+  }
+
+  .imageGallery img {
+    width: 130px;
+    height: 86px;
+  }
+
+  .detailsColumn {
+    flex: 1;
+    font-size: 2em;
+  }
+
+  .gameName {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .platforms,
+  .releaseDate,
+  .gameScore {
+    margin: 10px 0;
+  }
+
+  .gameShortDescription {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+
+  .gameDescription {
+    margin: auto;
+    margin-top: 40px;
+    line-height: 2em;
+    width: 50%;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .gameDescription img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px 0;
+  }
+
+  .gameDescription video,
+  .gameDescription iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .gameDescription p {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
 }
