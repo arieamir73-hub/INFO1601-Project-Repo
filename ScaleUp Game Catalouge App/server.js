@@ -132,12 +132,3 @@ function displayError(message) {
     descriptionElement.style.color = "red";
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const gameName = getGameNameFromURL();
-  if (gameName) {
-    searchSteamGame(gameName);
-  } else {
-    displayError("No game selected");
-  }
-});
