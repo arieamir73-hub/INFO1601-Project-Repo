@@ -10,17 +10,16 @@ function displayGames(games, containerId = "newGamesCards") {
   games.forEach((game) => {
     const card = document.createElement("div");
     card.className = "newCards";
+    card.style.cursor = "pointer"; // Shows hand cursor on hover
 
     card.innerHTML = `
       <img src="${game.thumbnail}" alt="${game.title}" class="newImage" />
-      <p class="newName" style="cursor: pointer; text-decoration: underline;">${game.title}</p>
+      <p class="newName" style="text-decoration: underline;">${game.title}</p>
       <p class="newGenre">Genre: ${game.genre}</p>
     `;
 
-    // Only the name is clickable
-    const nameElement = card.querySelector(".newName");
-    nameElement.addEventListener("click", (e) => {
-      e.stopPropagation();
+    // Make the entire card clickable
+    card.addEventListener("click", () => {
       window.location.href = `gamePage.html?game=${encodeURIComponent(game.title)}`;
     });
 

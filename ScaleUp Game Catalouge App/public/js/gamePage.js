@@ -141,6 +141,20 @@ function displayGameDetails(game) {
       game.shortDescription ||
       "No description available";
 
+  const genresElement = document.querySelector(".gameGenres");
+  if (genresElement) {
+    // ONLY use FreeToGame's genre field
+    if (game.genre) {
+      genresElement.textContent = `Genre: ${game.genre}`;
+    } else {
+      genresElement.textContent = "Genre: Not specified";
+    }
+  }
+
+  console.log("Full game object:", game);
+  console.log("Genre:", game.genre);
+  console.log("Genres:", game.genres);
+
   const platformsElement = document.querySelector(".platforms");
   if (platformsElement && game.platforms) {
     const availablePlatforms = [];

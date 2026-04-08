@@ -41,6 +41,22 @@ app.get("/api/game/:appid", async (req, res) => {
     }
 
     const game = data[appid].data;
+    const gameName = game.name;
+
+    // Fetch genre from FreeToGame
+    let freeToGameGenre = null;
+    try {
+      const ftgResponse = await fetch("https://www.freetogame.com/api/games");
+      const ftgGames = await ftgResponse.json();
+      const match = ftgGames.find(
+        (g) => g.title.toLowerCase() === gameName.toLowerCase(),
+      );
+      if (match) {
+        freeToGameGenre = match.genre;
+      }
+    } catch (err) {
+      console.error("Failed to fetch FreeToGame genre:", err.message);
+    }
 
     res.json({
       appId: game.steam_appid,
@@ -55,6 +71,7 @@ app.get("/api/game/:appid", async (req, res) => {
       releaseDate: game.release_date?.date || "Unknown",
       metacriticScore: game.metacritic?.score || null,
       platforms: game.platforms || {},
+      genre: freeToGameGenre, // From FreeToGame
       source: "steam",
     });
   } catch (error) {
@@ -118,6 +135,7 @@ app.get("/api/freetogame/:name", async (req, res) => {
       metacriticScore: null,
       platforms: { windows: match.platform?.includes("Windows") },
       genre: match.genre,
+      genres: [{ description: match.genre }], // ADD THIS
       source: "freetogame",
     });
   } catch (error) {
