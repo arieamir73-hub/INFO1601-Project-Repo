@@ -129,11 +129,9 @@ function displayGameDetails(game) {
   if (releaseDateElement)
     releaseDateElement.textContent = `Release Date: ${game.releaseDate || "Unknown"}`;
 
-  const scoreElement = document.querySelector(".gameScore");
-  if (scoreElement) {
-    scoreElement.textContent = game.metacriticScore
-      ? `Metacritic Score: ${game.metacriticScore}`
-      : "Score: Not available";
+  const shortDescElement = document.querySelector(".gameShortDescription");
+  if (shortDescElement) {
+    shortDescElement.textContent = `Description: ${game.shortDescription || "No short description available"}`;
   }
 
   const descriptionElement = document.querySelector(".gameDescription");

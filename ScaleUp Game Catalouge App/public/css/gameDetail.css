@@ -57,6 +57,15 @@
 }
 
 /* Steam description styling - constrains images and videos */
+
+.gameShortDescription {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
 .gameDescription {
   margin: auto;
   margin-top: 40px;
