@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/indexCss.css" />
+    <link rel="stylesheet" href="css/gameDetail.css" />
+    <title>Skal Reviews</title>
+  </head>
+  <body>
+    <nav class="navBar">
+      <i class="bx bx-menu" id="menuToggle"></i>
+
+      <div class="navLinks">
+        <a href="index.html" class="Logo">Skal Reviews</a>
+        <a href="#">Browse Games</a>
+        <a href="#">Profile</a>
+        <a href="#">FAQ</a>
+      </div>
+
+      <input
+        type="search"
+        name="searchBar"
+        id="searchBar"
+        placeholder="Search Games"
+      />
+
+      <button id="loginBtn"><a href="login.html">Login</a></button>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>Menu</span>
+        <i class="bx bx-x" id="closeSidebar"></i>
+      </div>
+      <div class="sidebar-links">
+        <a href="index.html">Home</a>
+        <a href="#">Browse Games</a>
+        <a href="#">Profile</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+
+    <main class="mainSection">
+      <div class="gameLayout">
+        <div class="imageColumn">
+          <img class="mainImage" src="" alt="Game screenshot" />
+          <div class="imageGallery"></div>
+        </div>
+        <div class="detailsColumn">
+          <div class="platforms">Loading platforms...</div>
+          <p class="releaseDate">Loading release date...</p>
+          <p class="gameScore">Loading score...</p>
+        </div>
+      </div>
+
+      <div class="gameDescription">Loading description...</div>
+    </main>
+
+    <footer>
+      <div class="aboutSkal">
+        <p class="aboutSkalHeader">SKAL REVIEW</p>
+        <div class="followUsIcons">
+          <p>Follow Us At:</p>
+          <i class="bx bxl-instagram" style="color: #e4405f"></i>
+          <i class="bx bxl-facebook" style="color: #1877f2"></i>
+          <i class="bx bxl-youtube" style="color: #ff0000"></i>
+          <i class="bx bxl-twitter" style="color: #1da1f2"></i>
+        </div>
+        <p>© SKAL REVIEWS 2026 Inc.</p>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+    <script src="js/gamePage.js"></script>
+  </body>
+</html>

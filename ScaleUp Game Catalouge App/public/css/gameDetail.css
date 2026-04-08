@@ -1,0 +1,125 @@
+.mainSection {
+  width: 95vw;
+  margin: auto;
+  padding: 20px;
+}
+
+.gameLayout {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.imageColumn {
+  flex: 4;
+  max-width: 700px;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imageGallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.imageGallery img {
+  width: 100px;
+  height: 56px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.imageGallery img:hover {
+  opacity: 0.7;
+}
+
+.detailsColumn {
+  flex: 1;
+}
+
+.gameName {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.platforms,
+.releaseDate,
+.gameScore {
+  margin: 10px 0;
+}
+
+/* Steam description styling - constrains images and videos */
+.gameDescription {
+  margin: auto;
+  margin-top: 40px;
+  line-height: 2em;
+  width: 50%;
+  text-align: center;
+}
+
+.gameDescription img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 20px 0;
+}
+
+/* Constrain all videos in description */
+.gameDescription video,
+.gameDescription iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Constrain Steam's image containers */
+.gameDescription .bb_img_ctn {
+  display: block;
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.gameDescription .bb_img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Headings inside description */
+.gameDescription h1,
+.gameDescription h2,
+.gameDescription h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.gameDescription p {
+  margin-bottom: 15px;
+}
+
+/* Remove inline width/height from Steam's images */
+.gameDescription img[width],
+.gameDescription img[height] {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .gameLayout {
+    flex-direction: column;
+  }
+
+  .imageColumn {
+    max-width: 100%;
+  }
+}
