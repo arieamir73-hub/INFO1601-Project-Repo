@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    "firebase": "^12.11.0",
-    "firebase-admin": "^13.7.0"
+  "scripts": {
+    "start": "cd \"ScaleUp Game Catalouge App\" && npm start"
   }
 }
