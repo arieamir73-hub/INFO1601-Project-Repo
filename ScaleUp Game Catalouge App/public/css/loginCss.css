@@ -123,6 +123,10 @@ body {
   box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
 }
 
+button a {
+  text-decoration: none;
+}
+
 .signup-link {
   text-align: center;
   margin-top: 32px;
@@ -165,4 +169,52 @@ body {
 .bob-demo span {
   color: var(--accent-cyan);
   font-family: monospace;
+}
+
+.btn-continue:hover {
+  background: rgba(108, 108, 240, 0.1);
+  border-color: #6c6cf0;
+  color: #eaeaff;
+}
+
+.continue-btn-container {
+  margin-top: 12px;
+  text-align: center;
+}
+.btn-continue {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #3a3a4a;
+  padding: 12px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #c0c0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.demo-hint-centered {
+  text-align: center;
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1rem;
+  color: #d3d3df;
+}
+.demo-hint-centered span {
+  color: #d0d0ff;
+  background: #24242e;
+  padding: 2px 8px;
+  border-radius: 30px;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.demo-credentials-line {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }

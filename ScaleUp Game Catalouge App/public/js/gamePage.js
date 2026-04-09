@@ -1,3 +1,74 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  deleteDoc,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCfyF35FjI0ebsDcRYP2M6kBetAUEeJ5qA",
+  authDomain: "scaleup-game-catalouge-app.firebaseapp.com",
+  projectId: "scaleup-game-catalouge-app",
+  storageBucket: "scaleup-game-catalouge-app.firebasestorage.app",
+  messagingSenderId: "961765854732",
+  appId: "1:961765854732:web:5006ad00fc7cba5b976829",
+  measurementId: "G-XZF9KG7CB1",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const favoriteBtn = document.getElementById("favoriteButton");
+const params = new URLSearchParams(window.location.search);
+const gameTitle = params.get("game");
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    favoriteBtn.addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+    return;
+  }
+
+  const favRef = doc(db, "users", user.uid, "favorites", gameTitle);
+
+  // Check if already favorited
+  const favSnap = await getDoc(favRef);
+  if (favSnap.exists()) {
+    favoriteBtn.textContent = "♥ Favorited";
+    favoriteBtn.classList.add("favorited");
+  }
+
+  favoriteBtn.addEventListener("click", async () => {
+    const snap = await getDoc(favRef);
+
+    if (snap.exists()) {
+      // Remove favorite
+      await deleteDoc(favRef);
+      favoriteBtn.textContent = "♡ Favorite";
+      favoriteBtn.classList.remove("favorited");
+    } else {
+      // Add favorite — save enough info to display the card
+      await setDoc(favRef, {
+        title: gameTitle,
+        thumbnail: document.querySelector(".mainImage").src,
+        genre: document
+          .querySelector(".gameGenres")
+          .textContent.replace("Genre: ", ""),
+      });
+      favoriteBtn.textContent = "♥ Favorited";
+      favoriteBtn.classList.add("favorited");
+    }
+  });
+});
+
 function getGameNameFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("game");

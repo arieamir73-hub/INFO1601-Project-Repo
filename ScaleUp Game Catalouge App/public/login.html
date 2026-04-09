@@ -5,69 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/loginCss.css" />
     <title>GamecatalougeApp - Login</title>
-    <style>
-      
-      
-      .continue-btn-container {
-
-           margin-top: 12px;
-              text-align: center;
-
-      }
-      .btn-continue {
-
-              width: 100%;
-                 background: transparent;
-                     border: 1px solid #3a3a4a;
-                        padding: 12px;
-                          border-radius: 40px;
-                              font-weight: 500;
-                                font-size: 0.9rem;
-                                 color: #c0c0e0;
-                                   cursor: pointer;
-                                      transition: all 0.2s;
-                                        font-family: inherit;
-      }
-
-      .btn-continue:hover {
-
-         background: rgba(108, 108, 240, 0.1);
-           border-color: #6c6cf0;
-            color: #eaeaff;
-
-      }
-      .demo-hint-centered {
-
-        text-align: center;
-           margin-top: 1.8rem;
-             padding-top: 1rem;
-              border-top: 1px solid rgba(255, 255, 255, 0.08);
-               font-size: 1rem;
-                  color: #d3d3df;
-
-      }
-      .demo-hint-centered span {
-
-        color: #d0d0ff;
-            background: #24242e;
-              padding: 2px 8px;
-               border-radius: 30px;
-                 font-family: monospace;
-                   font-size: 1rem;
-                    font-weight: 500;
-
-      }
-      .demo-credentials-line {
-
-          margin-top: 6px;
-            display: flex;
-             justify-content: center;
-               gap: 8px;
-                flex-wrap: wrap;
-
-      }
-
-    </style>
   </head>
   <body>
     <div class="login-container">
@@ -81,13 +18,12 @@
 
         <form id="loginForm" onsubmit="return false;">
           <div class="input-group">
-             <label>Email or Username</label>
+            <label>Email or Username</label>
             <input
               type="text"
               id="username"
               placeholder="bob@mail.com or bob"
               autocomplete="off"
-              
             />
           </div>
 
@@ -95,8 +31,8 @@
             <label>Password</label>
             <input
               type="password"
-                  id="password"
-                    placeholder="Enter your password"
+              id="password"
+              placeholder="Enter your password"
             />
           </div>
 
@@ -105,16 +41,23 @@
 
         <!-- Continue without login button -->
         <div class="continue-btn-container">
-          <button type="button" class="btn-continue" id="continueWithoutLoginBtn">Continue without login</button>
+          <button
+            type="button"
+            class="btn-continue"
+            id="continueWithoutLoginBtn"
+            onclick="window.location.href = 'index.html'"
+          >
+            Continue without login
+          </button>
         </div>
 
         <div class="signup-link">
-          Don't have an account? <a id="showSignup">Sign Up</a>
+          Don't have an account?
+          <a id="showSignup" href="signUp.html">Sign Up</a>
         </div>
 
-        
         <div class="demo-hint-centered">
-           Demo credentials:
+          Demo credentials:
           <div class="demo-credentials-line">
             <span>bob@mail.com</span> / <span>bobpass</span>
           </div>
@@ -122,93 +65,6 @@
       </div>
     </div>
 
-    <div
-        id="signupModal"
-          style="
-            display: none;
-             position: fixed;
-               top: 0;
-                 left: 0;
-                   width: 100%;
-                    height: 100%;
-                     background: rgba(0, 0, 0, 0.8);
-                       justify-content: center;
-                         align-items: center;
-                             z-index: 1000;
-      "
-    >
-      <div
-            class="login-card"
-              style="max-width: 440px; margin: 20px; position: relative"
-      >
-        <div
-            style="
-                position: absolute;
-                   top: 20px;
-                     right: 20px;
-                       cursor: pointer;
-                         font-size: 24px;
-                           color: var(--text-secondary);
-          "
-             id="closeSignup"
-        >
-          &times;
-        </div>
-        <div class="logo">
-          <h1>Create Account</h1>
-          <p>Join Melodify today</p>
-        </div>
-
-        <div id="signupError" class="error-message"></div>
-
-        <form id="signupForm" onsubmit="return false;">
-          <div class="input-group">
-            <label>Username</label>
-            <input
-              type="text"
-              id="signupUsername"
-              placeholder="Choose a username"
-            />
-          </div>
-          <div class="input-group">
-            <label>Email</label>
-            <input type="email" id="signupEmail" placeholder="your@email.com" />
-          </div>
-          <div class="input-group">
-            <label>Password</label>
-            <input
-              type="password"
-              id="signupPassword"
-              placeholder="Create a password"
-            />
-          </div>
-          <div class="input-group">
-            <label>Account Type</label>
-            <select
-                           id="signupAccountType"
-                       style="
-                    width: 100%;
-                 padding: 14px 16px;
-               background: #1e1e1e;
-                 border: 1px solid #2a2a2a;
-                    border-radius: 12px;
-                         color: white;
-              "
-            >
-              <option value="Free">Free</option>
-              <option value="Premium">Premium</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-login" id="signupBtn">
-            Sign Up
-          </button>
-        </form>
-
-        <div class="signup-link">
-          Already have an account? <a id="showLoginFromSignup">Log In</a>
-        </div>
-      </div>
-    </div>
+    <script type="module" src="js/login.js"></script>
   </body>
 </html>
-

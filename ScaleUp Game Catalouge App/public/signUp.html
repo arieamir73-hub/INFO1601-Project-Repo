@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/signUpCss.css" />
+    <title>Skal Reviews - Sign Up</title>
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="signup-card">
+        <div class="logo">
+          <h1>SKAL</h1>
+          <p>Join Your Gaming Catalog For F2P Games</p>
+        </div>
+
+        <div id="errorMsg" class="error-message"></div>
+        <div id="successMsg" class="success-message"></div>
+
+        <form id="signupForm">
+          <!-- Row 1: First Name & Last Name -->
+          <div class="form-row">
+            <div class="input-group half">
+              <label>First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                placeholder="John"
+                autocomplete="given-name"
+              />
+            </div>
+            <div class="input-group half">
+              <label>Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Doe"
+                autocomplete="family-name"
+              />
+            </div>
+          </div>
+
+          <!-- Row 2: Username & Email -->
+          <div class="form-row">
+            <div class="input-group half">
+              <label>Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="john@mail.com"
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <!-- Row 5: Password & Account Type -->
+          <div class="form-row">
+            <div class="input-group half">
+              <label>Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+              />
+            </div>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="terms-group">
+            <input type="checkbox" id="agreeTerms" />
+            <label for="agreeTerms">
+              I agree to the <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-signup" id="signupBtn">
+            Create Account
+          </button>
+        </form>
+
+        <div class="continue-btn-container">
+          <button
+            type="button"
+            class="btn-continue"
+            id="continueWithoutLoginBtn"
+          >
+            Continue without account
+          </button>
+        </div>
+
+        <div class="login-link">
+          Already have an account? <a href="login.html">Log In</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/signup.js"></script>
+    <script type="module" src="js/navbar.js"></script>
+  </body>
+</html>
