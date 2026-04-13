@@ -177,7 +177,6 @@ function displaySteamReviews(reviews) {
 
     reviewCard.innerHTML = `
       <div class="review-header">
-        <img class="review-avatar" src="${review.author.avatar}" alt="${review.author.name}">
         <span class="review-author">${review.author.name}</span>
         <span class="review-recommended ${recClass}">${recommendation}</span>
       </div>

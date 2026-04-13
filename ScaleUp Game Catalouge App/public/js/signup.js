@@ -15,12 +15,35 @@ const firebaseConfig = {
   measurementId: "G-XZF9KG7CB1",
 };
 
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.classList.replace("bx-hide", "bx-show");
+  } else {
+    passwordInput.type = "password";
+    togglePassword.classList.replace("bx-show", "bx-hide");
+  }
+});
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const signupForm = document.getElementById("signupForm");
 const errorMsg = document.getElementById("errorMsg");
 const successMsg = document.getElementById("successMsg");
+
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.classList.add("show");
+}
+
+function showSuccess(msg) {
+  successMsg.textContent = msg;
+  successMsg.classList.add("show");
+}
 
 signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -31,11 +54,14 @@ signupForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
   const agreeTerms = document.getElementById("agreeTerms").checked;
 
+  // Clear messages
   errorMsg.textContent = "";
+  errorMsg.classList.remove("show");
   successMsg.textContent = "";
+  successMsg.classList.remove("show");
 
   if (!agreeTerms) {
-    errorMsg.textContent = "You must agree to the Terms of Service.";
+    showError("You must agree to the Terms of Service.");
     return;
   }
 
@@ -46,20 +72,19 @@ signupForm.addEventListener("submit", async (e) => {
       password,
     );
 
-    // Save name to Firebase profile
     await updateProfile(userCredential.user, {
       displayName: `${firstName} ${lastName}`,
     });
 
-    successMsg.textContent = "Account created! Redirecting...";
+    showSuccess("Account created! Redirecting..."); // moved here inside try
     setTimeout(() => (window.location.href = "login.html"), 2000);
   } catch (error) {
     if (error.code === "auth/email-already-in-use") {
-      errorMsg.textContent = "This email is already registered.";
+      showError("This email is already registered.");
     } else if (error.code === "auth/weak-password") {
-      errorMsg.textContent = "Password must be at least 6 characters.";
+      showError("Password must be at least 6 characters.");
     } else {
-      errorMsg.textContent = "Something went wrong. Please try again.";
+      showError("Something went wrong. Please try again.");
     }
   }
 });

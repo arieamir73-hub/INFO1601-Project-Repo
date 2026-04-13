@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/loginCss.css" />
     <title>GamecatalougeApp - Login</title>
@@ -29,17 +33,30 @@
 
           <div class="input-group">
             <label>Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-            />
+            <div style="position: relative; display: flex; align-items: center">
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                style="padding-right: 40px; flex: 1"
+              />
+              <i
+                class="bx bx-hide"
+                id="togglePassword"
+                style="
+                  position: absolute;
+                  right: 14px;
+                  cursor: pointer;
+                  font-size: 20px;
+                  color: gray;
+                "
+              ></i>
+            </div>
           </div>
 
           <button type="submit" class="btn-login" id="loginBtn">Log In</button>
         </form>
 
-        <!-- Continue without login button -->
         <div class="continue-btn-container">
           <button
             type="button"

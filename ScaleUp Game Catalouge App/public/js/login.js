@@ -20,11 +20,19 @@ const auth = getAuth(app);
 const loginForm = document.getElementById("loginForm");
 const errorMsg = document.getElementById("errorMsg");
 
-loginForm.addEventListener("submit", async () => {
+function showError(msg) {
+  errorMsg.textContent = msg;
+  errorMsg.classList.add("show");
+}
+
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
   const email = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
   errorMsg.textContent = "";
+  errorMsg.classList.remove("show");
 
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -33,8 +41,21 @@ loginForm.addEventListener("submit", async () => {
       password,
     );
     console.log("Logged in:", userCredential.user);
-    window.location.href = "index.html"; // change to your home page
+    window.location.href = "index.html";
   } catch (error) {
-    errorMsg.textContent = "Invalid email or password. Please try again.";
+    showError("Invalid email or password. Please try again.");
+  }
+});
+
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.classList.replace("bx-hide", "bx-show");
+  } else {
+    passwordInput.type = "password";
+    togglePassword.classList.replace("bx-show", "bx-hide");
   }
 });

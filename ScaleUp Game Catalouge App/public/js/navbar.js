@@ -21,8 +21,9 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
   const loginBtn = document.getElementById("loginBtn");
 
+  if (!loginBtn) return;
+
   if (user) {
-    // Swap to logout icon
     loginBtn.innerHTML = `<i class="bx bx-log-out" style="font-size: 28px;"></i>`;
     loginBtn.style.background = "none";
     loginBtn.style.border = "none";
@@ -36,7 +37,6 @@ onAuthStateChanged(auth, (user) => {
       }
     });
   } else {
-    // Show login button
     loginBtn.innerHTML = `<a href="login.html">Login</a>`;
     loginBtn.style.background = "";
     loginBtn.style.border = "";

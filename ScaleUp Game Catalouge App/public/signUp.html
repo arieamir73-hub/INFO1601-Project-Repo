@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/signUpCss.css" />
     <title>Skal Reviews - Sign Up</title>
@@ -54,15 +58,27 @@
           </div>
 
           <!-- Row 5: Password & Account Type -->
-          <div class="form-row">
-            <div class="input-group half">
-              <label>Password</label>
+
+          <div class="input-group">
+            <label>Password</label>
+            <div style="position: relative; display: flex; align-items: center">
               <input
                 type="password"
                 id="password"
-                placeholder="Create a password"
-                autocomplete="new-password"
+                placeholder="Enter your password"
+                style="padding-right: 40px; flex: 1"
               />
+              <i
+                class="bx bx-hide"
+                id="togglePassword"
+                style="
+                  position: absolute;
+                  right: 14px;
+                  cursor: pointer;
+                  font-size: 20px;
+                  color: gray;
+                "
+              ></i>
             </div>
           </div>
 
